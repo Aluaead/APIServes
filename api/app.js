@@ -6,7 +6,7 @@ var bodyParser = require('body-parser');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/userdata');
 var notesRouter = require('./routes/notedata');
-
+var upload = require('./routes/upload');
 var app = express();
 
 // view engine setup
@@ -21,9 +21,15 @@ app.use('/', indexRouter);
 
 app.use('/userdata/del',usersRouter);
 app.use('/userdata', usersRouter);
+app.use('/userdata/getone',usersRouter);
+app.use('/userdata/add',usersRouter);
+
+app.use('/upload',upload);
 
 app.use('/notedata',notesRouter);
 app.use('/notedata/del',notesRouter);
+app.use('/notedata/notecount',notesRouter);
+app.use('/notedata/paging',notesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

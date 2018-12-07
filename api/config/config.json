@@ -2,7 +2,7 @@
   "host": "localhost",
   "user": "root",
   "password": "ddd",
-  "database": "suoji",
+  "database": "data",
   "connectionLimit": 10,
   "supportBigNumbers": true
 }
